@@ -1,0 +1,9 @@
+# requirements.txt
+langchain
+langchain-community
+langchain-groq
+streamlit
+plotly
+pandas
+sqlalchemy
+python-dotenv

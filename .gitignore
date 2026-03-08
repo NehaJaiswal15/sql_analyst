@@ -1,0 +1,5 @@
+# .gitignore
+sql_analyst/
+__pycache__/
+*.pyc
+.env
