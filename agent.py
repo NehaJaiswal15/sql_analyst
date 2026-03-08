@@ -5,6 +5,7 @@ from langchain_groq import ChatGroq
 from dotenv import load_dotenv
 from tools import get_all_tables
 import os
+import streamlit as st
 
 load_dotenv()
 
@@ -18,7 +19,7 @@ def load_agent(tables: list = None):
     llm = ChatGroq(
         model="llama-3.3-70b-versatile",
         temperature=0,
-        api_key=os.getenv("GROQ_API_KEY")
+        api_key=os.getenv("GROQ_API_KEY") or st.secrets.get("GROQ_API_KEY", "")
     )
 
     agent = create_sql_agent(
